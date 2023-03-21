@@ -58,7 +58,8 @@ public class ShowTimeController : MonoBehaviour {
 
 	}
 
-	void OnGUI () {
+    [System.Obsolete]
+    void OnGUI () {
 
 		//SceneChange --------------------------------------------
 		

@@ -147,8 +147,9 @@ public class GUIControllerSD : MonoBehaviour {
 		ChangeAnimation((int)defaultAnimType);
 		
 	}
-	
-	void OnGUI(){
+
+    [System.Obsolete]
+    void OnGUI(){
 		
 		//AnimationChange ------------------------------------------------
 		float animButtonHeight = Screen.height/ (animButtonInfoNormal.Length + animButtonInfoBlack.Length + 1 ) - 3;

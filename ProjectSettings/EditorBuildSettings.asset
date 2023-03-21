@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/IkinokoBattle/Scenes/TitleScene.unity
+    guid: 90f973c4730cbaf40a424c9bf05642ce
+  - enabled: 1
+    path: Assets/IkinokoBattle/Scenes/MainScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/IkinokoBattle/Scenes/GameOverScene.unity
+    guid: 07ea9d129fdb2be429da46280f0429cd
   m_configObjects: {}
