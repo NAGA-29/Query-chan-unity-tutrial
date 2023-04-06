@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public class EnemyStatus : MobStatus
 {
     private NavMeshAgent _agent;
+
     protected override void Start()
     {
         base.Start();
@@ -24,10 +25,9 @@ public class EnemyStatus : MobStatus
         base.OnDie();
         StartCoroutine(DestroyCoroutine());
     }
-    
-    /**倒された時の消滅コルーチン
-     * 
-     */
+
+    ///
+    /// 倒された時の消滅コルーチン
     private IEnumerator DestroyCoroutine()
     {
         yield return new WaitForSeconds(3);

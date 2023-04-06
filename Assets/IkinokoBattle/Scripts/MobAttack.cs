@@ -7,6 +7,7 @@ public class MobAttack : MonoBehaviour
 {
     [SerializeField] private float attackCooldown = 0.5f; //攻撃までのクールダウン
     [SerializeField] private Collider attackCollider;
+    [SerializeField] private AudioSource swingSound;
 
     private MobStatus _status;
 
@@ -33,10 +34,17 @@ public class MobAttack : MonoBehaviour
     public void OnAttackStart()
     {
         this.attackCollider.enabled = true;
+
+        if (this.swingSound != null)
+        {
+            swingSound.pitch = Random.Range(0.7f, 1.3f);
+            swingSound.Play();
+        }
     }
 
     /**attackColliderが攻撃対象にHTIした時に呼ばれる
      */
+
     public void OnHitAttack(Collider collider)
     {
         var targetMob = collider.GetComponent<MobStatus>();
@@ -44,7 +52,7 @@ public class MobAttack : MonoBehaviour
 
         targetMob.Damage(1); //プレイヤーにダメージ
     }
-        
+
     public void OnAttackFinished()
     {
         attackCollider.enabled = false;

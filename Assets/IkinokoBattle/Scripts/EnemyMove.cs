@@ -26,7 +26,6 @@ public class EnemyMove : MonoBehaviour
             return;
         }
 
-
         // 検知したオブジェクトに「Player」のタグがついていれば、そのオブジェクトを追いかける
         if (collider.CompareTag("Player"))
 

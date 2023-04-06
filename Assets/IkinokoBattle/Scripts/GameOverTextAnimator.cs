@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOverTextAnimator : MonoBehaviour
 {
-    void Start()
+    private void Start()
     {
         var transformCache = transform;
         //終点として使用するため、初期座標を保持する
@@ -28,6 +28,5 @@ public class GameOverTextAnimator : MonoBehaviour
         {
             SceneManager.LoadScene("TitleScene");
         });
-
     }
 }

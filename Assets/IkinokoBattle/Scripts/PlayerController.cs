@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-[RequireComponent (typeof(PlayerStatus))]
-[RequireComponent (typeof(MobAttack))]
-
+[RequireComponent(typeof(PlayerStatus))]
+[RequireComponent(typeof(MobAttack))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 6;
@@ -18,8 +17,7 @@ public class PlayerController : MonoBehaviour
     private PlayerStatus _status;
     private MobAttack _attack;
 
-
-    void Start()
+    private void Start()
     {
         _characterController = GetComponent<CharacterController>(); //毎フレームアクセスするので、負荷を下げるためにキャッシュする
         _transform = transform; //Transformもキャッシュすると少しだけ負荷が下がる
@@ -31,7 +29,7 @@ public class PlayerController : MonoBehaviour
         _moveVelocity.y += Physics.gravity.y * Time.deltaTime;
     }
 
-    void Update()
+    private void Update()
     {
         Debug.Log(_characterController.isGrounded ? "地上にいます" : "空中です");
 
@@ -55,8 +53,6 @@ public class PlayerController : MonoBehaviour
             _moveVelocity.x = 0;
             _moveVelocity.z = 0;
         }
-
-
 
         if (_characterController.isGrounded)
         {
